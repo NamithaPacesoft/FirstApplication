@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_url"
+            android:hint="@string/hint_url"
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:text="@string/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/image_sample"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+</RelativeLayout>
