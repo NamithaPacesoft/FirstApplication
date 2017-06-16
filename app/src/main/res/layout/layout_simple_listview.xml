@@ -4,25 +4,17 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/et_image_url"
-        android:hint="@string/hint_url"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btn_image_display"
-        android:text="@string/btn_display"
-        android:layout_gravity="center"
+        android:id="@+id/et_word"
+        android:hint="@string/hint_common_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-
-
-    <ImageView
-        android:id="@+id/image_dispaly"
+    <Button
+        android:id="@+id/btn_add"
+        android:text="@string/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ListView
+        android:id="@+id/lv_simple"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
-
-
+        android:layout_height="match_parent"></ListView>
 </LinearLayout>

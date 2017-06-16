@@ -3,10 +3,20 @@
 
     <!-- Namitha -->
     <string name="hint_name">Enter your Name</string>
+    <string name="hint_contact">Enter the Number</string>
+    <string name="hint_common_word">Enter Common Words</string>
     <string name="btn_send">Send</string>
     <string name="btn_ok">OK</string>
+    <string name="btn_delete">DELETE</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_add_contacts">Add Contacts</string>
     <string name="btn_display">Display</string>
+    <string name="btn_start">Start Dialog</string>
+    <string name="btn_stop">Stop Dialog</string>
     <string name="hint_locaiton">Enter Location</string>
     <string name="hint_url">Please enter the details </string>
-    <string name="hint_time">Enter time</string>
+    <string name="hint_time">Enter Time</string>
+    <string name="btn_check">Check</string>
+    <string name="btn_show_contacts">View All Contacts</string>
+
 </resources>

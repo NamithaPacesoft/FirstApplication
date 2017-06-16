@@ -15,6 +15,12 @@ public final  class ConstantDetails {
 
     public static final String TAG_URL ="URL";
     public static final String TAG_IMAGE="IMAGE";
+    public static final int  MSG_TYPE_DOWNLOAD_IMAGE=1;
+    public static final String TAG_SERVICE_LOGGER="Calling from Service";
+    public static final String TAG_CLASS_LOGGER="Calling from Class";
+    public static final String TAG_MESSAGE="Message";
+
+    public static final String TAG_BUTTON_FRAGMENT="BUTTON_FRAGMENT";
 
 
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Binder;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -16,6 +17,8 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.example.user.myapplication.constants.ConstantDetails;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -33,6 +36,8 @@ public class ImageBinderService extends Service {
     public Bitmap imageDownoaded;
 
     private Handler imageHandler;
+
+
 
     public class ImageBinder extends Binder {
         public ImageBinderService getService(){
@@ -60,13 +65,21 @@ public class ImageBinderService extends Service {
 
     @Override
     public void onCreate() {
+        Log.i(ConstantDetails.TAG_SERVICE_LOGGER + getClass().getSimpleName(), "\n\n onCreate: Called ");
         super.onCreate();
 
+    }
+
+    @Override
+    public void onStart(Intent intent, int startId) {
+        Log.i(ConstantDetails.TAG_SERVICE_LOGGER + getClass().getSimpleName(), "\n\n onStart: Called ");
+        super.onStart(intent, startId);
     }
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+        Log.i(ConstantDetails.TAG_SERVICE_LOGGER + getClass().getSimpleName(), "\n\n onBind: Called ");
         return imageBinderObject;
     }
 
@@ -76,10 +89,41 @@ public class ImageBinderService extends Service {
     }
 
     @Override
+    public boolean onUnbind(Intent intent) {
+        Log.i(ConstantDetails.TAG_SERVICE_LOGGER + getClass().getSimpleName(), "\n\n onUnbind: Called ");
+        return super.onUnbind(intent);
+    }
+
+    @Override
     public void onDestroy() {
-        imageThread.interrupt();
-        imageThread.quit();
+        Log.i(ConstantDetails.TAG_SERVICE_LOGGER + getClass().getSimpleName(), "\n\n onDestroy: Called ");
         super.onDestroy();
+    }
+
+    @Override
+    public void onRebind(Intent intent) {
+        Log.i(ConstantDetails.TAG_SERVICE_LOGGER + getClass().getSimpleName(), "\n\n onRebind: Called ");
+        super.onRebind(intent);
+    }
+
+    @Override
+    public void onTaskRemoved(Intent rootIntent) {
+        Log.i(ConstantDetails.TAG_SERVICE_LOGGER + getClass().getSimpleName(), "\n\n onTaskRemoved: Called ");
+        super.onTaskRemoved(rootIntent);
+    }
+
+
+    public Bitmap fnDownloadImage(final String strUrl){
+        Bitmap image=null;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+
+
+        return image;
     }
 
 

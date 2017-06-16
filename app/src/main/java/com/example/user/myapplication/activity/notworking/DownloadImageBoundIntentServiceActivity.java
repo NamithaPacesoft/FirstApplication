@@ -25,7 +25,7 @@ import com.example.user.myapplication.services.binder.notworking.ImageBinderInte
 public class DownloadImageBoundIntentServiceActivity  extends AppCompatActivity{
     EditText etUrl;
     Button btnDisplay;
-    ImageView imageDisplay;
+    ImageView imageViewDisplay;
     ProgressDialog pdImageProgress;
     ImageBinderIntentService objBinderService;
     ImageBinderIntentService.ImageBinder objImageBinder;
@@ -47,7 +47,7 @@ public class DownloadImageBoundIntentServiceActivity  extends AppCompatActivity{
         super.onStart();
 
         Intent intentDownloadImage = new Intent(this,ImageBinderIntentService.class);
-        bindService(intentDownloadImage,connImageDownload,BIND_AUTO_CREATE);
+        bindService(intentDownloadImage, serviceConnImageDownload,BIND_AUTO_CREATE);
 
     }
 
@@ -56,7 +56,7 @@ public class DownloadImageBoundIntentServiceActivity  extends AppCompatActivity{
         isServiceBound =false;
         etUrl = (EditText) findViewById(R.id.et_image_url);
         btnDisplay = (Button) findViewById(R.id.btn_image_display);
-        imageDisplay = (ImageView) findViewById(R.id.image_dispaly);
+        imageViewDisplay = (ImageView) findViewById(R.id.image_dispaly);
     }
 
 
@@ -73,13 +73,13 @@ public class DownloadImageBoundIntentServiceActivity  extends AppCompatActivity{
         Bitmap image;
         String strUrl = etUrl.getText().toString();
         image=objBinderService.fnDownloadImage(strUrl);
-        imageDisplay.setImageBitmap(image);
+        imageViewDisplay.setImageBitmap(image);
     }
 
 
 
 
-    private ServiceConnection connImageDownload = new ServiceConnection() {
+    private ServiceConnection serviceConnImageDownload = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             objImageBinder = (ImageBinderIntentService.ImageBinder) service;
@@ -98,7 +98,7 @@ public class DownloadImageBoundIntentServiceActivity  extends AppCompatActivity{
     protected void onStop() {
 
         if (isServiceBound){
-            unbindService(connImageDownload);
+            unbindService(serviceConnImageDownload);
             isServiceBound =false;
         }
         super.onStop();

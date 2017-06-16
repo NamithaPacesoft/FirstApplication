@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user.myapplication">
 
-    <uses-permission android:name="android.permission.INTERNET" ></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -11,31 +16,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
-        </activity>
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.SecondaryActivity" />
         <activity android:name=".activity.CallBackMethodsTest" />
         <activity android:name=".activity.AsyncTaskActivity" />
         <activity android:name=".activity.AsyncTaskImageActivity" />
         <activity android:name=".activity.ThreadActivity" />
         <activity android:name=".activity.notworking.ServiceProgressActivity" />
-
-        <activity android:name=".activity.DownloadImageBoundServiceActivity">
+        <activity android:name=".activity.notworking.DownloadImageBoundIntentServiceActivity" />
+        <activity android:name=".activity.DownloadImageBoundServiceActivity" />
+        <activity android:name=".activity.DownloadImageMessengerServiceActivity" />
+        <activity android:name=".activity.NetworkConnectivityCheckActivity" />
+        <activity android:name=".activitywithinnerclass.NetworkConnectivityCheckActivity" />
+        <activity android:name=".activity.withContentProviders.UserContactManipulationActivity"/>
+        <activity android:name=".activity.withContentProviders.UserContactViewActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.withContentProviders.UserContactAddActivity" />
+        <activity android:name=".activity.withContentProviders.CustomCommonWordsActivity"/>
+        <activity android:name=".activity.intents.ExampleImplicitActivity"/>
+       <activity android:name=".activity.usingfragments.FragmentTestActivity"/>
 
-        <activity android:name=".activity.notworking.DownloadImageBoundIntentServiceActivity">
+        <activity android:name=".activity.usingfragments.OrientationChangeActivity">
 
         </activity>
+        <activity android:name=".activity.usingfragments.PortraitDetailsActivity"></activity>
 
-        <service android:name=".services.binder.notworking.ImageBinderIntentService"></service>
-        <service android:name=".services.binder.ImageBinderService" ></service>
-        <service    android:name=".services.startedservice.ImageIntentService"></service>
-        <service android:name=".services.startedservice.ImageService" android:exported="false"></service>
+        <service android:name=".services.binder.ImageMessengerService" />
+        <service android:name=".services.binder.notworking.ImageBinderIntentService" />
+        <service android:name=".services.binder.ImageBinderService" />
+        <service android:name=".services.startedservice.ImageIntentService" />
+        <service
+            android:name=".services.startedservice.ImageService"
+            android:exported="false" />
 
+        <receiver android:name=".broadcastreceiver.InternetCheckBroadcastReceiver" />
+        <receiver android:name=".activitywithinnerclass.NetworkConnectivityCheckActivity$InternetCheckBroadcastReceiver" />
+
+        <provider
+            android:name=".contentprovider.CommonWordsContentProvider"
+            android:authorities="com.example.user.myapplication.contentprovider"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>
