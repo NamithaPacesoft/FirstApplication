@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.user.myapplication.R;
-import com.example.user.myapplication.services.startedservice.ProgressService;
+import com.example.user.myapplication.services.startedservice.service.ProgressService;
 
 /**
  * Created by User on 2017-06-03.

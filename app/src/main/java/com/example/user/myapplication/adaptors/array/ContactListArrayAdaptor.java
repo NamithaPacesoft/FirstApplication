@@ -3,6 +3,7 @@ package com.example.user.myapplication.adaptors.array;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,7 @@ public class ContactListArrayAdaptor extends ArrayAdapter<ContactDetails> {
     TextView tvPhone;
     TextView tvMobile;
     Button btnDelete;
+    int count =0;
 
     @NonNull
     @Override
@@ -46,6 +48,7 @@ public class ContactListArrayAdaptor extends ArrayAdapter<ContactDetails> {
 
         ContactDetails contact = lstContactDetails.get(position);
 
+        Log.i(getClass().getSimpleName(), "count :" + (++ count));
         if (convertView ==null){
             convertView = layoutInflater.inflate(R.layout.layout_contacts_list_items,parent,false);
         }

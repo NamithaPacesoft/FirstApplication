@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.user.myapplication.R;
-import com.example.user.myapplication.services.startedservice.ImageService;
+import com.example.user.myapplication.services.startedservice.service.ImageService;
 
 /**
  * Created by User on 2017-06-03.

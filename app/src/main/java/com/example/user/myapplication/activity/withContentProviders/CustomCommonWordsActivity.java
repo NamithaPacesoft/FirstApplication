@@ -77,7 +77,7 @@ public class CustomCommonWordsActivity extends AppCompatActivity {
         Uri uri=getContentResolver().insert(CommonWordsContentProvider.CONTENT_URI, contentValues);
         getWords(uri,lstCommonWords);
 
-        CommonWordsArrayAdaptor wordsAdaptor=new CommonWordsArrayAdaptor(this,lstCommonWords);
+        CommonWordsArrayAdaptor wordsAdaptor=new CommonWordsArrayAdaptor(this,lstCommonWords,null);
 
         lstView.setAdapter(wordsAdaptor);
         wordsAdaptor.notifyDataSetChanged();
@@ -88,7 +88,7 @@ public class CustomCommonWordsActivity extends AppCompatActivity {
 
         lstCommonWords = new ArrayList<CommonWords>();
         getWords(lstCommonWords);
-        CommonWordsArrayAdaptor wordsAdaptor=new CommonWordsArrayAdaptor(this,lstCommonWords);
+        CommonWordsArrayAdaptor wordsAdaptor=new CommonWordsArrayAdaptor(this,lstCommonWords,null);
 
         lstView.setAdapter(wordsAdaptor);
         wordsAdaptor.notifyDataSetChanged();

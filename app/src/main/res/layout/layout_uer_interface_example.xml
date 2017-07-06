@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    >
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_messages"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        style="@style/MyTitleStyle"
+        />
+
+
+   <Button
+       android:id="@+id/btn_pick_time"
+       android:text="@string/btn_pick_time"
+       android:layout_below="@id/tv_message"
+       android:layout_alignParentLeft="true"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       style="@style/MyNormalStyle"
+       />
+
+    <Spinner
+        android:id="@+id/sp_filter"
+        android:layout_below="@id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        style="@style/MyBasicStyle"
+        ></Spinner>
+
+
+    <ListView
+        android:id="@+id/lv_messages"
+        android:layout_below="@id/sp_filter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        ></ListView>
+</RelativeLayout>
